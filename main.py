@@ -5,28 +5,28 @@ from microbit import *
 import random
 
 
-Song = "In The Hall Of The Mountain King"
+song = "In The Hall Of The Mountain King"
+game = "G is a guessing game Shake for hint"
+
 
 while True:
     
-    ballAnswers = [ "no way",
-                       "yup",
-                       "nah",
-                       "never",
-                       "ye",
-                       "YES",
-                       "prob not",
-                       "maybe",
-                       "no",]
-     
-    display.show("8")
+    animal = [ "White",
+            "big",
+            "animal",
+            "fluffy",
+            "bhaa",]
+    
+    
+#     display.scroll(str(gameOne), wait=False, loop=False)
+    display.show("G")
+    sleep(1000)
     if accelerometer.was_gesture("shake"):
-         display.clear()
-         sleep(500)
-         display.scroll(random.choice(ballAnswers))
-         
-     
-    if button_a.was_pressed():
+        display.clear()
+        sleep(500)
+        display.scroll(random.choice(animal))
+             
+    elif button_a.was_pressed():
         
         tune = ["A3:2", "B3:2", "C4:2", "D4:2", "E4:2", "C4:2", "E4:4", "D#4:2", "B3:2","D#4:4",
                 "D4:2", "B3:2","D4:4", "A3:2", "B3:2", "C4:2", "D4:2", "E4:2", "C4:2", "E4:2",
@@ -35,11 +35,18 @@ while True:
                 "B4:2", "C5:2", "D5:2", "E5:2", "C5:2", "E5:2","A5:2", "G5:2", "E5:2", "C5:2",
                 "E5:2","G5:8",]
         
-        display.scroll(str(Song), wait=False, loop=False)
+        display.scroll(str(song), wait=False, loop=False)
         music.play(tune)
         
-    if button_a.was_pressed(): 
-       pass
+    elif button_b.was_pressed():
+        
+        display.clear()
+        display.scroll(str(game), wait=False, loop=False)
+        sleep(25000)
+        
+       
+        
+
         
         
         
