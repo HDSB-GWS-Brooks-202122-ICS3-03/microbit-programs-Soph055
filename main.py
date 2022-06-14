@@ -5,8 +5,8 @@ from microbit import *
 import random
 
 
-song = "In The Hall Of The Mountain King"
-game = "G is a guessing game Shake for hint"
+answer = "SHEEP"
+game = "G is a guessing game Shake for hint click B for answer"
 
 
 while True:
@@ -18,7 +18,7 @@ while True:
             "bhaa",]
     
     
-#     display.scroll(str(gameOne), wait=False, loop=False)
+
     display.show("G")
     sleep(1000)
     if accelerometer.was_gesture("shake"):
@@ -26,7 +26,7 @@ while True:
         sleep(500)
         display.scroll(random.choice(animal))
              
-    elif button_a.was_pressed():
+    elif button_b.was_pressed():
         
         tune = ["A3:2", "B3:2", "C4:2", "D4:2", "E4:2", "C4:2", "E4:4", "D#4:2", "B3:2","D#4:4",
                 "D4:2", "B3:2","D4:4", "A3:2", "B3:2", "C4:2", "D4:2", "E4:2", "C4:2", "E4:2",
@@ -35,14 +35,14 @@ while True:
                 "B4:2", "C5:2", "D5:2", "E5:2", "C5:2", "E5:2","A5:2", "G5:2", "E5:2", "C5:2",
                 "E5:2","G5:8",]
         
-        display.scroll(str(song), wait=False, loop=False)
+        display.scroll(str(answer), wait=False, loop=True)
         music.play(tune)
         
-    elif button_b.was_pressed():
+    elif button_a.was_pressed():
         
         display.clear()
         display.scroll(str(game), wait=False, loop=False)
-        sleep(25000)
+        sleep(36500)
         
        
         
